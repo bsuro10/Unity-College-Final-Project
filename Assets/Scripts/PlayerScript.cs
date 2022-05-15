@@ -15,12 +15,14 @@ public class PlayerScript : MonoBehaviour
     public float fireRate = 2f;
     public float arcRange = 1f;
     public float attackDamage = 50f;
+    public bool hasProjectileAbility = false;
+    public StealthStatScript stealthStatScript;
+    public PlayerAttachedVolumeScript playerAttachedVolumeScript;
 
     private InventoryManagerScript m_inventoryManagerScript;
     private Vector3 m_projectileDestination;
     private bool m_isLeftHand;
     private float m_timeToFire;
-    private bool m_hasProjectileAbility = false;
 
     private void Start()
     {
@@ -41,7 +43,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
             SceneManagerScript.Instance.journalManagerScript.ToggleJournal();
 
-        if (Input.GetButton("Fire1") && m_hasProjectileAbility && Time.time >= m_timeToFire)
+        if (Input.GetButton("Fire1") && hasProjectileAbility && Time.time >= m_timeToFire)
         {
             m_timeToFire = Time.time + 1 / fireRate;
             ShootProjectile();
@@ -92,11 +94,29 @@ public class PlayerScript : MonoBehaviour
 
     public void TurnOnProjectileAbility()
     {
-        m_hasProjectileAbility = true;
+        hasProjectileAbility = true;
     }
 
     public void KillPlayer()
     {
         SceneManager.LoadScene(2);
     }
+
+    public void TakeStealthDamage(float damage)
+    {
+        stealthStatScript.TakeStealthDamage(damage);
+        if (stealthStatScript.currentStealth <= 0)
+            KillPlayer();
+    }
+
+    public void WarnPlayer()
+    {
+        playerAttachedVolumeScript.EnableVolume();
+    }
+
+    public void ClearWarnPlayer()
+    {
+        playerAttachedVolumeScript.DisableVolume();
+    }
+
 }

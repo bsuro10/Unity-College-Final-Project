@@ -2,10 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScannerScript : MonoBehaviour
+public class EnemyPatrolScript : MonoBehaviour
 {
     public Transform[] waypoints;
-    public float speed = 5;
 
     private int m_currentWaypointIndex;
     private Vector3 m_target;
