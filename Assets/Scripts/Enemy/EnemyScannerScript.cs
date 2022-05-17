@@ -11,7 +11,7 @@ public class EnemyScannerScript : MonoBehaviour
     public float minAngle = -15f;
     public float stealthDamage = 10f;
     public float stealthRate = 1f;
-    public float attackRange = 6f;
+    public float attackRange = 8f;
     public float warningRange = 8f;
 
     private Vector3 m_rotateDirection;
@@ -32,7 +32,7 @@ public class EnemyScannerScript : MonoBehaviour
     {
         RotateScanner();
         RayCastAttack();
-        RayCastWarning();
+        /*RayCastWarning();*/
     }
 
     void RotateScanner()
@@ -53,6 +53,9 @@ public class EnemyScannerScript : MonoBehaviour
 
     void RayCastAttack()
     {
+        InitRayCast(new Vector3(0, -0.5f, 0), attackRange, RayCastAttackCallback, Color.yellow);
+        InitRayCast(new Vector3(0, -0.4f, 0), attackRange, RayCastAttackCallback, Color.yellow);
+        InitRayCast(new Vector3(0, -0.3f, 0), attackRange, RayCastAttackCallback, Color.yellow);
         InitRayCast(new Vector3(0, -0.2f, 0), attackRange, RayCastAttackCallback, Color.yellow);
         InitRayCast(new Vector3(0, -0.1f, 0), attackRange, RayCastAttackCallback, Color.yellow);
         InitRayCast(Vector3.zero, attackRange, RayCastAttackCallback, Color.yellow);
@@ -60,9 +63,10 @@ public class EnemyScannerScript : MonoBehaviour
         InitRayCast(new Vector3(0, 0.2f, 0), attackRange, RayCastAttackCallback, Color.yellow);
         InitRayCast(new Vector3(0, 0.3f, 0), attackRange, RayCastAttackCallback, Color.yellow);
         InitRayCast(new Vector3(0, 0.4f, 0), attackRange, RayCastAttackCallback, Color.yellow);
+        InitRayCast(new Vector3(0, 0.5f, 0), attackRange, RayCastAttackCallback, Color.yellow);
     }
 
-    void RayCastWarning()
+    /*void RayCastWarning()
     {
         InitRayCast(new Vector3(0, -0.2f, 0), warningRange, RayCastWarningCallback, Color.green);
         InitRayCast(new Vector3(0, -0.1f, 0), warningRange, RayCastWarningCallback, Color.green);
@@ -71,23 +75,25 @@ public class EnemyScannerScript : MonoBehaviour
         InitRayCast(new Vector3(0, 0.2f, 0), warningRange, RayCastWarningCallback, Color.green);
         InitRayCast(new Vector3(0, 0.3f, 0), warningRange, RayCastWarningCallback, Color.green);
         InitRayCast(new Vector3(0, 0.4f, 0), warningRange, RayCastWarningCallback, Color.green);
-    }
+    }*/
 
     void RayCastAttackCallback(RaycastHit hit)
     {
         if (hit.collider.CompareTag("Player"))
         {
+            StopAllCoroutines();
+            StartCoroutine(WarnPlayer());
             ScanPlayer();
         }
     }
 
-    void RayCastWarningCallback(RaycastHit hit)
+    /*void RayCastWarningCallback(RaycastHit hit)
     {
         if (hit.collider.CompareTag("Player"))
         {
             StartCoroutine(WarnPlayer());
         }
-    }
+    }*/
 
     void InitRayCast(Vector3 offset, float range, Action<RaycastHit> callbackAction, Color color)
     {
@@ -104,7 +110,8 @@ public class EnemyScannerScript : MonoBehaviour
         if (Time.time >= m_timeToAttack)
         {
             m_timeToAttack = Time.time + 1 / stealthRate;
-            SceneManagerScript.Instance.playerScript.TakeStealthDamage(stealthDamage);
+            float distance = Vector3.Distance(SceneManagerScript.Instance.playerScript.transform.position, transform.position);
+            SceneManagerScript.Instance.playerScript.TakeStealthDamage(stealthDamage * (1 / distance));
         }
     }
 

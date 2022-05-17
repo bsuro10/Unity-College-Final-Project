@@ -38,6 +38,10 @@ public class PlayerScript : MonoBehaviour
             {
                 SceneManagerScript.Instance.dialogueManagerScript.DisplayNextSentence();
             }
+            else
+            {
+                CheckInteraction();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -117,6 +121,23 @@ public class PlayerScript : MonoBehaviour
     public void ClearWarnPlayer()
     {
         playerAttachedVolumeScript.DisableVolume();
+    }
+
+    void CheckInteraction()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, 2f);
+        if (hits.Length > 0)
+        {
+            foreach (Collider hit in hits)
+            {
+                if ((hit.transform.GetComponent<InteractableScript>()) &&
+                    (hit.transform.GetComponent<InteractableScript>().isInteractable))
+                {
+                    hit.transform.GetComponent<InteractableScript>().Interact();
+                    return;
+                }
+            }
+        }
     }
 
 }
