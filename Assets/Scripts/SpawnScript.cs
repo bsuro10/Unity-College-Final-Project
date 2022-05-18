@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
 {
-    public GameObject[] objects;
-    
-    void Start()
-    {
-        foreach (GameObject gameObject in objects)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    public GameObject[] spawnObjects;
+    public GameObject[] despawnObjects;
 
     public void Spawn()
     {
-        foreach (GameObject gameObject in objects)
+        foreach (GameObject gameObject in spawnObjects)
         {
             gameObject.SetActive(true);
+        }
+    }
+
+    public void Despawn()
+    {
+        foreach (GameObject gameObject in despawnObjects)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

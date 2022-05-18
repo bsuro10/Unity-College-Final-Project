@@ -36,6 +36,6 @@ public class MenuScript : MonoBehaviour
 
     public void onPlayButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 }

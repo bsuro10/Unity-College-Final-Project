@@ -9,6 +9,10 @@ TagManager:
   - OrangeTomb
   - Bullet
   - DeadEnemy
+  - Afterlife Gate
+  - BlueCrystal
+  - OrangeCrystal
+  - GreenCrystal
   layers:
   - Default
   - TransparentFX

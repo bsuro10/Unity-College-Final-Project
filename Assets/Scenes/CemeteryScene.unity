@@ -4538,7 +4538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -5694,7 +5694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -6297,7 +6297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &168182088
 Transform:
   m_ObjectHideFlags: 0
@@ -18825,6 +18825,9 @@ MonoBehaviour:
   fireRate: 2
   arcRange: 1
   attackDamage: 50
+  hasProjectileAbility: 0
+  stealthStatScript: {fileID: 0}
+  playerAttachedVolumeScript: {fileID: 0}
 --- !u!4 &478212360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9bfa0c2985bcdca469da2285e0a27429, type: 3}
@@ -26907,10 +26910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b15041e0a0c6e45b9a39fb891df097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  spawnObjects:
   - {fileID: 1267918141}
   - {fileID: 119489664}
   - {fileID: 754939322}
+  despawnObjects: []
 --- !u!1 &662638445
 GameObject:
   m_ObjectHideFlags: 0
@@ -31145,7 +31149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -48286,6 +48290,10 @@ PrefabInstance:
       value: Ghoul 2
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -53580,6 +53588,10 @@ PrefabInstance:
       value: Ghoul 3
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -54122,7 +54134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1280670744
 Transform:
   m_ObjectHideFlags: 0
@@ -58549,13 +58561,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b15041e0a0c6e45b9a39fb891df097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  spawnObjects:
   - {fileID: 1401615417}
   - {fileID: 168182087}
   - {fileID: 1280670743}
   - {fileID: 1759640611}
   - {fileID: 1849999827}
   - {fileID: 292010793}
+  despawnObjects: []
 --- !u!4 &1379104995
 Transform:
   m_ObjectHideFlags: 0
@@ -59610,7 +59623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1401615418
 Transform:
   m_ObjectHideFlags: 0
@@ -73524,8 +73537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b15041e0a0c6e45b9a39fb891df097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  spawnObjects:
   - {fileID: 203506422}
+  despawnObjects: []
 --- !u!1 &1735724939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1682550975742922, guid: 80f7f125cecbcf04286574bf64d97bb4, type: 3}
@@ -74473,7 +74487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1759640612
 Transform:
   m_ObjectHideFlags: 0
