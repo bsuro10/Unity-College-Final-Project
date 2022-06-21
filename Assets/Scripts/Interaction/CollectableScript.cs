@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Ran.Item;
 
 public class CollectableScript : InteractableScript
 {

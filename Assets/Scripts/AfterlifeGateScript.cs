@@ -40,7 +40,6 @@ public class AfterlifeGateScript : MonoBehaviour
             foreach (Collider hit in hits)
             {
                 int crystalIndex = crystals.FindIndex(crystal => crystal.CompareTag(hit.tag));
-                Debug.Log(crystalIndex);
                 if (crystalIndex != -1)
                     crystals.RemoveAt(crystalIndex);
             }
