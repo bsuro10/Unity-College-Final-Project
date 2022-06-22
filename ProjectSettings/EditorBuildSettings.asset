@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: ff10991fb8af6bc45b4a071ad03f4ed7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ForestEscapingPathScene.unity
     guid: 0930adf16bd56eb4cb975e2061823077
   - enabled: 1
-    path: Assets/HeroEditor/Megapack/Scenes/TestRoom [Megapack].unity
-    guid: 21494f4e4290f604c9776b4aa10ce143
+    path: Assets/Scenes/TheDungeon.unity
+    guid: e036dda3a1d429a4594cfded526c7258
   m_configObjects: {}

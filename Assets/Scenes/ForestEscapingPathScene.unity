@@ -2688,10 +2688,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430192135}
     m_Modifications:
-    - target: {fileID: 3904353578168238073, guid: 8a0ec83baa8bf9e41bfa153abe874d29, type: 3}
-      propertyPath: LightsModule.light
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3904353578198563326, guid: 8a0ec83baa8bf9e41bfa153abe874d29, type: 3}
       propertyPath: m_RootOrder
       value: 4
