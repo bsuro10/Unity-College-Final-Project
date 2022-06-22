@@ -14,6 +14,7 @@ TagManager:
   - OrangeCrystal
   - GreenCrystal
   - Ground
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -54,11 +55,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 4063744591
+  - name: Floor
+    uniqueID: 2173841923
     locked: 0
   - name: Player
     uniqueID: 1504017527
+    locked: 0
+  - name: Ground
+    uniqueID: 4063744591
     locked: 0
   - name: Layer
     uniqueID: 774895389
