@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    [SerializeField] Transform previousRoom;
-    [SerializeField] Transform nextRoom;
+    [SerializeField] private Transform nextRoom;
     [SerializeField] private CameraControllerScript cameraController;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private BoxCollider2D boxCollider;
+
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (collision.transform.position.x < transform.position.x)
-                cameraController.MoveToNewRoom(nextRoom);
-            else
-                cameraController.MoveToNewRoom(previousRoom);
+            cameraController.MoveToNewRoom(nextRoom);
+            boxCollider.isTrigger = false;
         }
     }
 }
