@@ -15,6 +15,7 @@ TagManager:
   - GreenCrystal
   - Ground
   - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX
