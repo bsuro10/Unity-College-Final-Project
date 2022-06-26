@@ -17858,6 +17858,10 @@ PrefabInstance:
       propertyPath: rightEdge
       value: 
       objectReference: {fileID: 859677456}
+    - target: {fileID: 2517576342227932217, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: stoppingDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5235301769013001447, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: m_Camera
       value: 
