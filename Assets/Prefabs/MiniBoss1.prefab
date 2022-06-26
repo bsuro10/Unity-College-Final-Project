@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  currentHealth: 0
   iFrameDuration: 1
   numberOfFlahses: 3
   playerLayerName: Player
@@ -261,11 +262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6337931928843101403, guid: a822802d19953bf419403b9ca8eed796, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1599.4974
+      value: 65.3501
       objectReference: {fileID: 0}
     - target: {fileID: 6337931928843101403, guid: a822802d19953bf419403b9ca8eed796, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 899.99994
+      value: 9.6494
       objectReference: {fileID: 0}
     - target: {fileID: 6337931928843101403, guid: a822802d19953bf419403b9ca8eed796, type: 3}
       propertyPath: m_LocalPosition.x
