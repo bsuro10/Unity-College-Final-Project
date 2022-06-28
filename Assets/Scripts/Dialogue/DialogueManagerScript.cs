@@ -28,7 +28,7 @@ public class DialogueManagerScript : MonoBehaviour
         m_afterDialogueAction = dialogue.afterDialogueAction;
         animator.SetBool("isOpen", true);
         m_sentences.Clear();
-        SceneManagerScript.Instance.playerScript.isInDialogue = true;
+        SetPlayerIsInDialogueTrue();
         foreach (DialogueElement dialogueElement in dialogue.sentences)
         {
             m_sentences.Enqueue(dialogueElement);
@@ -71,8 +71,10 @@ public class DialogueManagerScript : MonoBehaviour
 
     private void EndDialogue()
     {
+        rightCharacterImage.enabled = false;
+        leftCharacterImage.enabled = false;
         animator.SetBool("isOpen", false);
-        SceneManagerScript.Instance.playerScript.isInDialogue = false;
+        SetPlayerIsInDialogueFalse();
         m_afterDialogueAction.Invoke();
     }
 
@@ -94,4 +96,21 @@ public class DialogueManagerScript : MonoBehaviour
             }
         }
     }
+
+    private void SetPlayerIsInDialogueTrue()
+    {
+        if (SceneManagerScript.Instance.playerScript != null)
+            SceneManagerScript.Instance.playerScript.isInDialogue = true;
+        if (SceneManagerScript.Instance.player2DScript != null)
+            SceneManagerScript.Instance.player2DScript.isInDialogue = true;
+    }
+
+    private void SetPlayerIsInDialogueFalse()
+    {
+        if (SceneManagerScript.Instance.playerScript != null)
+            SceneManagerScript.Instance.playerScript.isInDialogue = false;
+        if (SceneManagerScript.Instance.player2DScript != null)
+            SceneManagerScript.Instance.player2DScript.isInDialogue = false;
+    }
+
 }

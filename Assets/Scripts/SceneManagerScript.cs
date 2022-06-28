@@ -7,6 +7,7 @@ public class SceneManagerScript : MonoBehaviour
     // Declare any public variables that you want to be able 
     // to access throughout your scene
     public PlayerScript playerScript;
+    public Player2DMovementScript player2DScript;
     public DialogueManagerScript dialogueManagerScript;
     public JournalManagerScript journalManagerScript;
     public InventoryManagerScript inventoryManagerScript;
@@ -19,6 +20,7 @@ public class SceneManagerScript : MonoBehaviour
         // Cache references to all desired variables
         dialogueManagerScript = FindObjectOfType<DialogueManagerScript>();
         playerScript = FindObjectOfType<PlayerScript>();
+        player2DScript = FindObjectOfType<Player2DMovementScript>();
         journalManagerScript = FindObjectOfType<JournalManagerScript>();
         inventoryManagerScript = FindObjectOfType<InventoryManagerScript>();
     }

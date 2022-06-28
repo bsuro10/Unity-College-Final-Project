@@ -8,6 +8,7 @@ public class Player2DMovementScript : MonoBehaviour
     public LayerMask groundLayerMask;
     public LayerMask wallLayerMask;
     public float wallJumpCooldown;
+    public bool isInDialogue;
 
     private Rigidbody2D body;
     private Animator animator;
@@ -25,30 +26,38 @@ public class Player2DMovementScript : MonoBehaviour
 
     private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        FlipCharacterAccordingToWalkingDirection(horizontalInput);
-
-        if (currentWallJumpCooldown > wallJumpCooldown)
+        if (isInDialogue)
         {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            
-            if (OnWall() && !IsGrounded())
-            {
-                body.gravityScale = 1f;
-                body.velocity = Vector2.zero;
-            }
-            else
-                body.gravityScale = initialGravityScale;
-
-            if (Input.GetKey(KeyCode.Space))
-                Jump();
+            if (Input.GetKeyDown(KeyCode.E))
+                SceneManagerScript.Instance.dialogueManagerScript.DisplayNextSentence();
         }
         else
-            currentWallJumpCooldown += Time.deltaTime;
+        {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            FlipCharacterAccordingToWalkingDirection(horizontalInput);
 
-        animator.SetBool("isWalking", horizontalInput != 0);
-        animator.SetBool("isGrounded", IsGrounded());
-        animator.SetBool("isOnWall", OnWall());
+            if (currentWallJumpCooldown > wallJumpCooldown)
+            {
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+
+                if (OnWall() && !IsGrounded())
+                {
+                    body.gravityScale = 1f;
+                    body.velocity = Vector2.zero;
+                }
+                else
+                    body.gravityScale = initialGravityScale;
+
+                if (Input.GetKey(KeyCode.Space))
+                    Jump();
+            }
+            else
+                currentWallJumpCooldown += Time.deltaTime;
+
+            animator.SetBool("isWalking", horizontalInput != 0);
+            animator.SetBool("isGrounded", IsGrounded());
+            animator.SetBool("isOnWall", OnWall());
+        }
     }
 
     private void FlipCharacterAccordingToWalkingDirection(float horizontalInput)
