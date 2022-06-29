@@ -142,6 +142,8 @@ MonoBehaviour:
   - {fileID: 806925215345500213}
   - {fileID: 4676194992144209111}
   - {fileID: 6416826393202458471}
+  attackDelay: 0
+  arrowSound: {fileID: 8300000, guid: 376afc2f8530fe44e834af798a46719a, type: 3}
 --- !u!1 &8813648393490096026
 GameObject:
   m_ObjectHideFlags: 0

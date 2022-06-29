@@ -10,10 +10,11 @@ public class MeleeAttackScript : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask hitLayer;
+    [SerializeField] private AudioClip attackSound;
     protected float cooldownTimer = float.MaxValue;
     protected Animator animator;
 
-    private HealthScript objectHealth;
+    protected HealthScript objectHealth;
 
     protected void Awake()
     {
@@ -27,6 +28,7 @@ public class MeleeAttackScript : MonoBehaviour
 
     protected void Attack()
     {
+        SoundManager.instace.PlaySound(attackSound);
         cooldownTimer = 0;
         animator.SetTrigger("attack");
     }

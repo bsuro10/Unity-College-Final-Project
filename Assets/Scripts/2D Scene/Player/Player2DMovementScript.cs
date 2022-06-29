@@ -10,6 +10,9 @@ public class Player2DMovementScript : MonoBehaviour
     public float wallJumpCooldown;
     public bool isInDialogue;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
+
     private Rigidbody2D body;
     private Animator animator;
     private BoxCollider2D boxCollider;
@@ -48,7 +51,7 @@ public class Player2DMovementScript : MonoBehaviour
                 else
                     body.gravityScale = initialGravityScale;
 
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space))
                     Jump();
             }
             else
@@ -72,11 +75,13 @@ public class Player2DMovementScript : MonoBehaviour
     {
         if (IsGrounded())
         {
-            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            SoundManager.instace.PlaySound(jumpSound);
             animator.SetTrigger("jump");
+            body.velocity = new Vector2(body.velocity.x, jumpPower);
         } 
         else if (OnWall() && !IsGrounded())
         {
+            SoundManager.instace.PlaySound(jumpSound);
             currentWallJumpCooldown = 0;
             float xOppositeDirection = -Mathf.Sign(transform.localScale.x);
             body.velocity = new Vector2(xOppositeDirection * 1.5f, jumpPower);
@@ -97,6 +102,6 @@ public class Player2DMovementScript : MonoBehaviour
 
     public bool CanAttack()
     {
-        return IsGrounded() && !OnWall();
+        return !isInDialogue && IsGrounded() && !OnWall();
     }
 }

@@ -11,6 +11,10 @@ public class SpikeHeadScript : EnemyDamageScript
     [SerializeField] private float checkDelay;
     [SerializeField] private Transform rightEdge;
     [SerializeField] private Transform leftEdge;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip impactSound;
+
     private Vector3[] directions = new Vector3[4];
     private Vector3 destination;
     private float checkTimer;
@@ -79,6 +83,7 @@ public class SpikeHeadScript : EnemyDamageScript
 
     private new void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.instace.PlaySound(impactSound);
         base.OnTriggerEnter2D(collision);
         Stop();
     }

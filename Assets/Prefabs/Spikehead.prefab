@@ -155,3 +155,4 @@ MonoBehaviour:
   checkDelay: 1
   rightEdge: {fileID: 0}
   leftEdge: {fileID: 0}
+  impactSound: {fileID: 8300000, guid: 178725a3105f5334bad889338214f3e6, type: 3}

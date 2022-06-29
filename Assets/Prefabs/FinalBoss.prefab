@@ -533,6 +533,7 @@ MonoBehaviour:
   components:
   - {fileID: 7135756182164667419}
   - {fileID: 2517576342227932217}
+  deathSound: {fileID: 8300000, guid: 61947a31cdafc634ebb4c9d3f12bf1f2, type: 3}
 --- !u!114 &7135756182164667419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,13 +547,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1.5
-  range: 2.42
+  range: 2.67
   colliderDistance: 0.15
   damage: 1
   boxCollider: {fileID: 7135756182396126195}
   hitLayer:
     serializedVersion: 2
     m_Bits: 256
+  attackSound: {fileID: 8300000, guid: 70e2c6a269f8e8e4da8c4e1ec69559fc, type: 3}
 --- !u!114 &2517576342227932217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,4 +571,4 @@ MonoBehaviour:
   rightEdge: {fileID: 0}
   speed: 2.5
   target: {fileID: 0}
-  stoppingDistance: 1
+  stoppingDistance: 1.5

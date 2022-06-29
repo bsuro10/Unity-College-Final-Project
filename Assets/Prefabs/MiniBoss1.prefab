@@ -172,6 +172,7 @@ MonoBehaviour:
   components:
   - {fileID: 1947083782148828863}
   - {fileID: 6553327117410698909}
+  deathSound: {fileID: 8300000, guid: 55d69727ff0e9da44b88413db8d9d545, type: 3}
 --- !u!114 &1947083782148828863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 256
+  attackSound: {fileID: 8300000, guid: 7de8b364ae3061f4d8c8cadc8697b75b, type: 3}
 --- !u!114 &6553327117410698909
 MonoBehaviour:
   m_ObjectHideFlags: 0

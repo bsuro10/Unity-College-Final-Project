@@ -10,6 +10,9 @@ public class ArrowTrapScript : MonoBehaviour
     [SerializeField] private GameObject[] arrowsPool;
     [SerializeField] private float attackDelay = 0;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip arrowSound;
+
     private float cooldownTimer;
 
     private void Awake()
@@ -20,6 +23,7 @@ public class ArrowTrapScript : MonoBehaviour
     private void Attack()
     {
         cooldownTimer = 0;
+        SoundManager.instace.PlaySound(arrowSound);
         int availableArrowIndexFromPool = FindArrowFromPool();
         arrowsPool[availableArrowIndexFromPool].transform.position = firePoint.position;
         arrowsPool[availableArrowIndexFromPool].GetComponent<EnemyProjectileScript>().ActivateProjectile();

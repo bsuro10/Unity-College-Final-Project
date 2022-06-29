@@ -9,7 +9,7 @@ public class MeleeEnemyScript : MeleeAttackScript
 
     private new void Update()
     {
-        if (ObjectInSight() && cooldownTimer >= attackCooldown)
+        if (ObjectInSight() && cooldownTimer >= attackCooldown && objectHealth.currentHealth > 0)
         {
             isAttacking = true;
             Attack();

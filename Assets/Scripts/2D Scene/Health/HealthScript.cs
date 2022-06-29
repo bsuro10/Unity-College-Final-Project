@@ -22,6 +22,10 @@ public class HealthScript : MonoBehaviour
     [Header("Component")]
     [SerializeField] private Behaviour[] components;
 
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isDead = false;
@@ -41,6 +45,7 @@ public class HealthScript : MonoBehaviour
         {
             animator.SetBool("isHurt", true);
             StartCoroutine(Invulnerability());
+            SoundManager.instace.PlaySound(hurtSound);
         }
         else
         {
@@ -53,7 +58,7 @@ public class HealthScript : MonoBehaviour
                 {
                     component.enabled = false;
                 }
-
+                SoundManager.instace.PlaySound(deathSound);
                 onDeathAction.Invoke();
             }
         }
