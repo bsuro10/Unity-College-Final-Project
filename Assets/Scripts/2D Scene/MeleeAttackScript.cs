@@ -35,7 +35,7 @@ public class MeleeAttackScript : MonoBehaviour
 
     public void DamageHealthObject()
     {
-        if (ObjectInSight())
+        if (ObjectInSight() && objectHealth != null)
             objectHealth.TakeDamage(damage);
     }
 

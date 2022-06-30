@@ -29,6 +29,7 @@ public class Player2DMovementScript : MonoBehaviour
 
     private void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         if (isInDialogue)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -36,7 +37,6 @@ public class Player2DMovementScript : MonoBehaviour
         }
         else
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
             FlipCharacterAccordingToWalkingDirection(horizontalInput);
 
             if (currentWallJumpCooldown > wallJumpCooldown)
@@ -56,11 +56,11 @@ public class Player2DMovementScript : MonoBehaviour
             }
             else
                 currentWallJumpCooldown += Time.deltaTime;
-
-            animator.SetBool("isWalking", horizontalInput != 0);
-            animator.SetBool("isGrounded", IsGrounded());
-            animator.SetBool("isOnWall", OnWall());
         }
+
+        animator.SetBool("isWalking", !isInDialogue && horizontalInput != 0);
+        animator.SetBool("isGrounded", IsGrounded());
+        animator.SetBool("isOnWall", OnWall());
     }
 
     private void FlipCharacterAccordingToWalkingDirection(float horizontalInput)

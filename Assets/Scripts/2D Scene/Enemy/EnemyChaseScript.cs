@@ -22,7 +22,7 @@ public class EnemyChaseScript : MonoBehaviour
 
     private void Update()
     {
-        if (meleeEnemy.isAttacking)
+        if (meleeEnemy != null && meleeEnemy.isAttacking)
             isWalking = false;
         else
         {
