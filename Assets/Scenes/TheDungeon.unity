@@ -4135,7 +4135,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     - sentence: 'HEH HEH! You little human think you could escape from MY dungeon,
-        you will beg for you life once you will see whats ahead. Heh.. '
+        you will beg for your life once you will see whats ahead. '
       sentenceColor: {r: 0, g: 1, b: 0.15686275, a: 1}
       sentenceAudio: {fileID: 0}
       addToJournal: 0
@@ -8768,7 +8768,7 @@ MonoBehaviour:
   - {fileID: 1195702418}
   - {fileID: 2127591055}
   - {fileID: 984061479}
-  activateEnemiesOnStart: 0
+  activateEnemiesOnStart: 1
 --- !u!1 &946619767
 GameObject:
   m_ObjectHideFlags: 0
@@ -11552,7 +11552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616994844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78, y: -1.8, z: 0}
+  m_LocalPosition: {x: -5.37, y: 4.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20376,7 +20376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 5
-  sceneIndex: 3
+  sceneIndex: 5
 --- !u!1 &2124887817
 GameObject:
   m_ObjectHideFlags: 0
@@ -20875,18 +20875,26 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 636025abe1b58344f845b72cd5fe7177, type: 3}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: startingHealth
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1552903520}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1342799768}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
@@ -20894,15 +20902,35 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: NpcDialogueScript2D, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 89f7295372dfbfd4c9bc6d65de503e54, type: 3}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
       propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176336837734562440, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
+      propertyPath: onDeathAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5235301769013001447, guid: 237b781c2cb97f94883cd89dd2cea83d, type: 3}
