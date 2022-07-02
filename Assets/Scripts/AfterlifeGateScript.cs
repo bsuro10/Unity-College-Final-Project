@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AfterlifeGateScript : MonoBehaviour
 {
     public List<GameObject> crystals;
     public GameObject door;
     public CameraShakeScript cameraShakeScript;
+    [SerializeField] private UnityEvent onQuestCompletedEvent = new UnityEvent();
 
     private bool m_checkingForCrystals = false;
     private SphereCollider m_sphereCollider;
@@ -27,7 +29,7 @@ public class AfterlifeGateScript : MonoBehaviour
         {
             m_interactable = false;
             StartCoroutine(cameraShakeScript.Shake(7f, 0.02f));
-            door.SetActive(true);
+            onQuestCompletedEvent.Invoke();
         }
     }
 
