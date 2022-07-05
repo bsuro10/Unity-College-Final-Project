@@ -15,6 +15,15 @@ public class NpcDialogueScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            StartDialogue();
+            Destroy(gameObject);
+        }
+    }
+
     public void StartDialogue()
     {
         SceneManagerScript.Instance.dialogueManagerScript.StartDialogue(dialogue);

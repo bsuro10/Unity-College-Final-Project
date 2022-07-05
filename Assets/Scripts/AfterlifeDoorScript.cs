@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class AfterlifeDoorScript : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private int nextSceneIndex;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
-            SceneManager.LoadScene(3);
+        if (collision.collider.CompareTag("Player"))
+            SceneManager.LoadScene(nextSceneIndex);
     }
 }
