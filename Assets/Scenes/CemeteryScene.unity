@@ -4916,6 +4916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dac90b680897044a57f3f210fd086b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundMusicSource: {fileID: 498569000}
 --- !u!4 &125555530
 Transform:
   m_ObjectHideFlags: 0
@@ -24032,11 +24033,11 @@ RectTransform:
   m_Father: {fileID: 1541870197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 67.797}
-  m_SizeDelta: {x: 0, y: 135.5934}
-  m_Pivot: {x: 0.5, y: 0.50000006}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1600, y: 135.5934}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &613899830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34154,6 +34155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  player2DScript: {fileID: 0}
   dialogueManagerScript: {fileID: 0}
   journalManagerScript: {fileID: 0}
   inventoryManagerScript: {fileID: 0}
@@ -73410,8 +73412,6 @@ MonoBehaviour:
   - {fileID: 1267918141}
   - {fileID: 119489664}
   - {fileID: 754939322}
-  backgroundMusicSource: {fileID: 498569000}
-  backgroundMusicClip: {fileID: 8300000, guid: 2a82d0f6827af0247bb6dcb12d85759a, type: 3}
   dialogue:
     sentences:
     - sentence: ..... It's done, I killed them all.
@@ -73489,11 +73489,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1735571986}
           m_TargetAssemblyTypeName: EndOfSceneTriggerScript, Assembly-CSharp
           m_MethodName: EndScene
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -73510,6 +73510,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 125555529}
+        m_TargetAssemblyTypeName: SoundsManagerScript, Assembly-CSharp
+        m_MethodName: PlayBackgroundMusic
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a82d0f6827af0247bb6dcb12d85759a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1735571986}
+        m_TargetAssemblyTypeName: EndOfSceneTriggerScript, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  amountOfDeadEnemiesNeeded: 0
 --- !u!4 &1735571987
 Transform:
   m_ObjectHideFlags: 0

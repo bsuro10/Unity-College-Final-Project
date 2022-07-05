@@ -13,6 +13,9 @@ TagManager:
   - BlueCrystal
   - OrangeCrystal
   - GreenCrystal
+  - Ground
+  - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,10 +23,10 @@ TagManager:
   - Static Cover
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Wall
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -47,6 +50,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1514921715
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2173841923
+    locked: 0
+  - name: Wall
+    uniqueID: 648883977
+    locked: 0
+  - name: Player
+    uniqueID: 1504017527
+    locked: 0
+  - name: Ground
+    uniqueID: 4063744591
+    locked: 0
+  - name: Layer
+    uniqueID: 774895389
     locked: 0

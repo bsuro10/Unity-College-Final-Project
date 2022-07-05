@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public int startSceneIndex;
     public Canvas exitMenuCanvas;
     public Button playButton;
     public Button exitButton;
@@ -36,6 +37,6 @@ public class MenuScript : MonoBehaviour
 
     public void onPlayButtonClicked()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(startSceneIndex);
     }
 }
