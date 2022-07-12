@@ -5,6 +5,8 @@ public class MinableScript : CollectableScript
     public float maxHealth;
     public float currentHealth;
     public StealthBarScript barScript;
+    public SoundsManagerScript soundsManagerScript;
+    public AudioClip mineSound;
 
     private void Start()
     {
@@ -14,6 +16,7 @@ public class MinableScript : CollectableScript
 
     protected override void Collect()
     {
+        soundsManagerScript.PlaySound(mineSound);
         currentHealth -= SceneManagerScript.Instance.playerScript.attackDamage;
         barScript.SetStealth(currentHealth);
         if (currentHealth <= 0)

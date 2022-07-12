@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 42f34ebbbec0321498f5be1b7b98492e, type: 3}
   areaTagName: Afterlife Gate
   crystalPrefab: {fileID: 1829549426458922, guid: f035235bfe0fb5d48b6f85818f4f000e, type: 3}
-  successUsingItemAudio: {fileID: 0}
+  successUsingItemAudio: {fileID: 8300000, guid: fad319a3746bb7141a78ec67608f20b4, type: 3}

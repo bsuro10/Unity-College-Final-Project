@@ -12,18 +12,22 @@ public class EnemyPatrolScript : MonoBehaviour
     private NavMeshAgent m_agent;
     private bool m_isWalking = true;
 
-    void Start()
+    private void Awake()
     {
         m_animator = GetComponent<Animator>();
         m_agent = GetComponent<NavMeshAgent>();
     }
 
+    void Start()
+    {
+        if (waypoints.Length == 0)
+            m_isWalking = false;
+    }
+
     void Update()
     {
         if (m_isWalking)
-        {
             WalkTowardsNextWayPoint();
-        }
         m_animator.SetBool("isWalking", m_isWalking);
     }
 
