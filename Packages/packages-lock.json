@@ -168,7 +168,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:C:/Users/bsuro/שולחן העבודה/ml-agents-com.unity.ml-agents_1.0.8/com.unity.ml-agents",
+      "version": "file:D:/Unity/ml-agents-com.unity.ml-agents_1.0.8/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -185,6 +185,15 @@
       "depth": 2,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.recorder": {
+      "version": "3.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {

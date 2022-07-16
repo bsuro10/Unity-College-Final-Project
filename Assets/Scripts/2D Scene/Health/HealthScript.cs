@@ -74,6 +74,24 @@ public class HealthScript : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
     }
 
+    public void Respawn()
+    {
+        isDead = false;
+        AddHealth(startingHealth);
+        animator.SetBool("isDead", isDead);
+        animator.Play("player_idle");
+        StartCoroutine(Invulnerability());
+        foreach (Behaviour component in components)
+        {
+            component.enabled = true;
+        }
+    }
+
+    public void ResetHealth()
+    {
+        AddHealth(startingHealth);
+    }
+
     private IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer(playerLayerName), LayerMask.NameToLayer(enemyLayerName), true);
