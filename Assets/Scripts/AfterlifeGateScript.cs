@@ -7,7 +7,7 @@ public class AfterlifeGateScript : MonoBehaviour
 {
     public List<GameObject> crystals;
     public GameObject door;
-    public CameraShakeScript cameraShakeScript;
+    public CameraShakeScript[] cameraShakeScripts;
     [SerializeField] private UnityEvent onQuestCompletedEvent = new UnityEvent();
 
     private bool m_checkingForCrystals = false;
@@ -28,7 +28,10 @@ public class AfterlifeGateScript : MonoBehaviour
         if (m_interactable && crystals.Count == 0)
         {
             m_interactable = false;
-            StartCoroutine(cameraShakeScript.Shake(7f, 0.02f));
+            foreach (CameraShakeScript cameraShakeScript in cameraShakeScripts)
+            {
+                StartCoroutine(cameraShakeScript.Shake(7f, 0.02f));
+            }
             onQuestCompletedEvent.Invoke();
         }
     }
