@@ -32,7 +32,6 @@ public class EnemyScannerScript : MonoBehaviour
     {
         RotateScanner();
         RayCastAttack();
-        /*RayCastWarning();*/
     }
 
     void RotateScanner()
@@ -66,17 +65,6 @@ public class EnemyScannerScript : MonoBehaviour
         InitRayCast(new Vector3(0, 0.5f, 0), attackRange, RayCastAttackCallback, Color.yellow);
     }
 
-    /*void RayCastWarning()
-    {
-        InitRayCast(new Vector3(0, -0.2f, 0), warningRange, RayCastWarningCallback, Color.green);
-        InitRayCast(new Vector3(0, -0.1f, 0), warningRange, RayCastWarningCallback, Color.green);
-        InitRayCast(Vector3.zero, warningRange, RayCastWarningCallback, Color.red);
-        InitRayCast(new Vector3(0, 0.1f, 0), warningRange, RayCastWarningCallback, Color.green);
-        InitRayCast(new Vector3(0, 0.2f, 0), warningRange, RayCastWarningCallback, Color.green);
-        InitRayCast(new Vector3(0, 0.3f, 0), warningRange, RayCastWarningCallback, Color.green);
-        InitRayCast(new Vector3(0, 0.4f, 0), warningRange, RayCastWarningCallback, Color.green);
-    }*/
-
     void RayCastAttackCallback(RaycastHit hit)
     {
         if (hit.collider.CompareTag("Player"))
@@ -86,14 +74,6 @@ public class EnemyScannerScript : MonoBehaviour
             ScanPlayer();
         }
     }
-
-    /*void RayCastWarningCallback(RaycastHit hit)
-    {
-        if (hit.collider.CompareTag("Player"))
-        {
-            StartCoroutine(WarnPlayer());
-        }
-    }*/
 
     void InitRayCast(Vector3 offset, float range, Action<RaycastHit> callbackAction, Color color)
     {

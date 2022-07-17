@@ -16,6 +16,9 @@ TagManager:
   - Ground
   - Fire
   - Enemy
+  - Floor
+  - Danger
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
